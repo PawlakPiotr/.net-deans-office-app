@@ -1,0 +1,11 @@
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\bin\Debug\RecruitmentOffice.exe.config
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\bin\Debug\RecruitmentOffice.exe
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\bin\Debug\RecruitmentOffice.pdb
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.csprojResolveAssemblyReference.cache
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.Form1.resources
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.Properties.Resources.resources
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.csproj.GenerateResource.cache
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.csproj.CoreCompileInputs.cache
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.exe
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.pdb
+C:\Users\PiotrPawlak\source\repos\PjatkAcademy\RecruitmentOffice\obj\Debug\RecruitmentOffice.Form2.resources
