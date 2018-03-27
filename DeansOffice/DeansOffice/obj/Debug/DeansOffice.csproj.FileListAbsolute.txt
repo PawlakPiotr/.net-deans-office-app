@@ -1,0 +1,11 @@
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\bin\Debug\DeansOffice.exe.config
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\bin\Debug\DeansOffice.exe
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\bin\Debug\DeansOffice.pdb
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.csprojResolveAssemblyReference.cache
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.MainForm.resources
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.Properties.Resources.resources
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.StudentDialog.resources
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.csproj.GenerateResource.cache
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.csproj.CoreCompileInputs.cache
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.exe
+C:\Users\PiotrPawlak\Desktop\PjatkAcademy\DeansOffice\obj\Debug\DeansOffice.pdb
