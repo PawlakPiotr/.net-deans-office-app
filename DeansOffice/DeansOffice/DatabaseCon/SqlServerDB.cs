@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace DeansOffice
 {
+
     public class SqlServerDB
     {
         private List<Student> std;
         private const string dbConncection = "Data Source=db-mssql;Initial Catalog=s15182;Integrated Security=True";
-
-        private static string showStudents = "select * from student;";
-        private static string getNameOfTerm = "select nazwaSemestru from semestr;";
 
         public static void LoadData()
         {
@@ -25,7 +23,7 @@ namespace DeansOffice
                 var com = new SqlCommand();
 
                 com.Connection = con;
-                com.CommandText = showStudents;
+                com.CommandText = SqlQuery.showStudents;
                 SqlDataAdapter sqd = new SqlDataAdapter(com);
 
                 DataTable dt = new DataTable();
@@ -46,7 +44,7 @@ namespace DeansOffice
                 var com = new SqlCommand();
 
                 com.Connection = con;
-                com.CommandText = getNameOfTerm;
+                com.CommandText = SqlQuery.getNameOfTerm;
 
                 using (var dr = com.ExecuteReader())
                 {
@@ -70,7 +68,7 @@ namespace DeansOffice
                 if (MainForm.SemesterComboBox.Text == "semestr letni 2017/18")
                 {
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select * from student inner join student_semestr on student.nrIndeksu = student_semestr.nrIndeksu where student_semestr.idSemestru = 1", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(SqlQuery.getFirstTermName, con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     MainForm.StudentsDataGridView.DataSource = dt;
@@ -78,7 +76,7 @@ namespace DeansOffice
                 }
                 else if (MainForm.SemesterComboBox.Text.Contains("zimowy 2017/18"))
                 {
-                    SqlDataAdapter sda = new SqlDataAdapter("select * from student inner join student_semestr on student.nrIndeksu = student_semestr.nrIndeksu where student_semestr.idSemestru = 2", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(SqlQuery.getSecondTermName, con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     MainForm.StudentsDataGridView.DataSource = dt;
@@ -86,7 +84,7 @@ namespace DeansOffice
                 }
                 else if (string.IsNullOrEmpty(MainForm.SemesterComboBox.Text))
                 {
-                    SqlDataAdapter sda = new SqlDataAdapter("select * from student", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(SqlQuery.showStudents, con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     MainForm.StudentsDataGridView.DataSource = dt;
@@ -101,10 +99,10 @@ namespace DeansOffice
                 con.Open();
                 var com = new SqlCommand();
                 com.Connection = con;
-                com.CommandText = "delete from student where nrIndeksu=@nrIndx";
+                com.CommandText = SqlQuery.deleteData + "nrIndeksu=@nrIndx";
 
-
-                var index = Convert.ToInt32(MainForm.StudentsDataGridView.CurrentRow.Cells[0].Value);
+                int firstCell = 0;
+                var index = Convert.ToInt32(MainForm.StudentsDataGridView.CurrentRow.Cells[firstCell].Value);
 
                 com.Parameters.Add("@nrIndx", SqlDbType.Int).Value = index;
                 com.ExecuteNonQuery();
@@ -122,7 +120,7 @@ namespace DeansOffice
                 {
 
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select * from student where nrIndeksu like '" + MainForm.textBox1.Text + "'", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(SqlQuery.nrIndeksu_search, con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     MainForm.StudentsDataGridView.DataSource = dt;
@@ -131,7 +129,7 @@ namespace DeansOffice
                 else if (MainForm.LastNameCheckBox.Checked)
                 {
 
-                    SqlDataAdapter sda = new SqlDataAdapter("select * from student where nazwisko like '" + MainForm.textBox1.Text + "'", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(SqlQuery.nazwisko_search, con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     MainForm.StudentsDataGridView.DataSource = dt;
@@ -140,13 +138,27 @@ namespace DeansOffice
 
                 if (string.IsNullOrWhiteSpace(MainForm.textBox1.Text))
                 {
-                    SqlDataAdapter sda = new SqlDataAdapter("select * from student", con);
+                    SqlDataAdapter sda = new SqlDataAdapter(SqlQuery.showStudents, con);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     MainForm.StudentsDataGridView.DataSource = dt;
                 }
 
             }
+        }
+
+       
+
+        private static string GetQuery(string qr)
+        {
+            return qr;
+        }
+        private static string GetSearchQuery(string from, string columnName, string value)
+        {
+            string select_qr = "select * from" + from;
+            string where_condition = " where " + columnName + " like '";
+
+            return select_qr + where_condition + MainForm.textBox1.Text + "';";
         }
     }
 }

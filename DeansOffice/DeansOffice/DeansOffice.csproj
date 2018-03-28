@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuisnessLogic\Semestr.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,8 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerDB.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="DatabaseCon\SqlQuery.cs" />
+    <Compile Include="DatabaseCon\SqlServerDB.cs" />
+    <Compile Include="BuisnessLogic\Student.cs" />
     <Compile Include="StudentDialog.cs">
       <SubType>Form</SubType>
     </Compile>
